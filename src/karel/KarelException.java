@@ -18,7 +18,14 @@
   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
 
-package de.mcbc.karelui;
+package karel;
 
-public class KarelCrashedException extends KarelException {
+public class KarelException extends Exception {
+
+    public KarelException() {
+    }
+
+    public KarelException(String msg) {
+	super(msg);
+    }
 }
