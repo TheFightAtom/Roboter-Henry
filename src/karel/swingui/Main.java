@@ -25,9 +25,11 @@ import java.awt.event.WindowEvent;
 import java.io.File;
 import javax.swing.*;
 
+import karel.AppWindow;
+
 public class Main {
 
-    public static void main(String args[]) {
+    public static void main(String args[]) throws Exception {
 	File worldFile = null;
 	File progFile = null;
 
@@ -44,21 +46,22 @@ public class Main {
 		System.exit(1);
 	    }
 	}
+	
+	KarelFrame appWindow = new KarelFrame("Karel");
+		
 
-	KarelFrame frame = new KarelFrame("karel");
 
 	// When the user clicks the close window button on the frame,
 	// we need to shut down.
-	frame.addWindowListener(new WindowAdapter() {
+	 appWindow.addWindowListener(new WindowAdapter() {
 	    public void windowClosing(WindowEvent evt) {
 	      System.exit(0);
 	    }
 	  }
 				);
 
-	frame.setSize(300, 300);
-	frame.show();
-	if (worldFile != null) frame.loadWorld(worldFile);
-	if (progFile != null) frame.loadProgram(progFile);
+	 appWindow.setSize(300, 300);
+	 appWindow.setVisible(true);
+	
     }
 }

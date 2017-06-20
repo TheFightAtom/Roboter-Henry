@@ -1,7 +1,19 @@
 package karel;
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
+import karel.swingui.WorldPanel;
 
 public class AppWindow extends JFrame{
 	
@@ -9,8 +21,10 @@ public class AppWindow extends JFrame{
 	private JTextField derProgrammtext;
 	JButton button;
 	
-	public AppWindow(){
-		
+	public AppWindow() throws Exception {
+	  File testWorldFile = new File("./test_welt");
+	  WorldPanel worldPanel = new WorldPanel();
+	  		
 		requestFocus();
 		setResizable(false);
 		setLayout(null);
@@ -25,16 +39,20 @@ public class AppWindow extends JFrame{
 		derProgrammtext = new JTextField("Hier kannst du dein Programmtext eingeben!");
 		add(derProgrammtext);
 		
-			
+    this.setLayout(new BorderLayout());
+    getContentPane().add(worldPanel);
+    
+    this.repaint();
+    
+    worldPanel.setWorld(new WorldParser().parse(new FileReader(testWorldFile)));
+    worldPanel.repaint();
+    worldPanel.setVisible(true);
+    
+    System.out.println("Set world");
+   
 		
 		DerHandler handler = new DerHandler();
 		derProgrammtext.addActionListener(handler);
-	}
-	public static void main(String[] args){
-		AppWindow fenster = new AppWindow();
-		fenster.setVisible(true);
-		fenster.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		fenster.setSize(500,1000);
 	}
 	
 public class DerHandler implements ActionListener{
