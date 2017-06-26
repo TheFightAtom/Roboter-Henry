@@ -35,6 +35,7 @@ import java.awt.BorderLayout;
 import java.awt.Font;
 
 public class Main {
+  private static JTextField textField;
 
     public static void main(String args[]) throws Exception {
 	File worldFile = null;
@@ -81,8 +82,30 @@ public class Main {
 	 appWindow.getContentPane().setLayout(null);
 	 
 	 JButton btnRechtdrehen = new JButton("RechtDrehen");
-	 btnRechtdrehen.setBounds(12, 12, 155, 25);
+	 btnRechtdrehen.setBounds(12, 12, 136, 25);
 	 appWindow.getContentPane().add(btnRechtdrehen);
+	 
+	 JButton btnLinksdrehen = new JButton("LinksDrehen");
+	 btnLinksdrehen.setBounds(160, 12, 123, 25);
+	 appWindow.getContentPane().add(btnLinksdrehen);
+	 
+	 JButton btnRun = new JButton("Vorwärts");
+	 btnRun.addActionListener(new ActionListener() {
+	   public void actionPerformed(ActionEvent arg0) {
+	   }
+	 });
+	 btnRun.setBounds(12, 55, 123, 25);
+	 appWindow.getContentPane().add(btnRun);
+	 
+	 JButton btnBlocksetzen = new JButton("BlockSetzen");
+	 btnBlocksetzen.setBounds(147, 55, 136, 25);
+	 appWindow.getContentPane().add(btnBlocksetzen);
+	 
+	 textField = new JTextField();
+	 textField.setDropMode(DropMode.ON);
+	 textField.setBounds(12, 92, 357, 406);
+	 appWindow.getContentPane().add(textField);
+	 textField.setColumns(10);
 	 appWindow.setVisible(true);
 	
     }
