@@ -26,6 +26,13 @@ import java.io.File;
 import javax.swing.*;
 
 import karel.AppWindow;
+import java.awt.TextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.BorderLayout;
+import java.awt.Font;
 
 public class Main {
 
@@ -48,6 +55,7 @@ public class Main {
 	}
 	
 	KarelFrame appWindow = new KarelFrame("Karel");
+	appWindow.fWorldPanel.setBounds(381, 12, 398, 288);
 		
 
 
@@ -60,7 +68,21 @@ public class Main {
 	  }
 				);
 
-	 appWindow.setSize(300, 300);
+	 appWindow.setSize(793, 582);
+	 
+	 JButton btnTest = new JButton("test");
+	 btnTest.setBounds(67, 190, 63, 25);
+	 btnTest.addActionListener(new ActionListener() {
+	   public void actionPerformed(ActionEvent arg0) {
+	   }
+	 });
+	 appWindow.fWorldPanel.setLayout(null);
+	 appWindow.fWorldPanel.add(btnTest);
+	 appWindow.getContentPane().setLayout(null);
+	 
+	 JButton btnRechtdrehen = new JButton("RechtDrehen");
+	 btnRechtdrehen.setBounds(12, 12, 155, 25);
+	 appWindow.getContentPane().add(btnRechtdrehen);
 	 appWindow.setVisible(true);
 	
     }

@@ -27,19 +27,19 @@ public class AppWindow extends JFrame{
 	  		
 		requestFocus();
 		setResizable(false);
-		setLayout(null);
+		getContentPane().setLayout(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		pack();
 		setLocationRelativeTo(null);
 		
 		setVisible(true);
-		setSize(500,1000);
+		setSize(364,160);
 		setTitle("Programmfenster:");
 		setAlwaysOnTop(true);
 		derProgrammtext = new JTextField("Hier kannst du dein Programmtext eingeben!");
-		add(derProgrammtext);
+		getContentPane().add(derProgrammtext);
 		
-    this.setLayout(new BorderLayout());
+    getContentPane().setLayout(new BorderLayout());
     getContentPane().add(worldPanel);
     
     this.repaint();
