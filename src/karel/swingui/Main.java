@@ -36,6 +36,7 @@ import java.awt.Font;
 
 public class Main {
   private static JTextField textField;
+  private static JTextField textField_1;
 
     public static void main(String args[]) throws Exception {
 	File worldFile = null;
@@ -55,8 +56,12 @@ public class Main {
 	    }
 	}
 	
+	JLabel lblHierBefehleSchreiben = new JLabel("Hier Befehle Schreiben:");
+	lblHierBefehleSchreiben.setBounds(99, 92, 191, 15);
+	appWindow.getContentPane().add(lblHierBefehleSchreiben);
+	
 	KarelFrame appWindow = new KarelFrame("Karel");
-	appWindow.fWorldPanel.setBounds(381, 12, 398, 288);
+	appWindow.fWorldPanel.setBounds(392, 12, 547, 396);
 		
 
 
@@ -69,7 +74,7 @@ public class Main {
 	  }
 				);
 
-	 appWindow.setSize(793, 582);
+	 appWindow.setSize(953, 773);
 	 
 	 JButton btnTest = new JButton("test");
 	 btnTest.setBounds(67, 190, 63, 25);
@@ -103,9 +108,14 @@ public class Main {
 	 
 	 textField = new JTextField();
 	 textField.setDropMode(DropMode.ON);
-	 textField.setBounds(12, 92, 357, 406);
+	 textField.setBounds(12, 92, 368, 623);
 	 appWindow.getContentPane().add(textField);
 	 textField.setColumns(10);
+	 
+	 textField_1 = new JTextField();
+	 textField_1.setBounds(402, 420, 537, 295);
+	 appWindow.getContentPane().add(textField_1);
+	 textField_1.setColumns(10);
 	 appWindow.setVisible(true);
 	
     }
