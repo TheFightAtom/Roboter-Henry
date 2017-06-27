@@ -61,7 +61,7 @@ public class Main {
 	appWindow.getContentPane().add(lblHierBefehleSchreiben);
 	
 	KarelFrame appWindow = new KarelFrame("Karel");
-	appWindow.fWorldPanel.setBounds(392, 12, 547, 396);
+	appWindow.fWorldPanel.setBounds(392, 12, 535, 396);
 		
 
 
@@ -108,12 +108,12 @@ public class Main {
 	 
 	 textField = new JTextField();
 	 textField.setDropMode(DropMode.ON);
-	 textField.setBounds(12, 92, 368, 623);
+	 textField.setBounds(12, 95, 368, 607);
 	 appWindow.getContentPane().add(textField);
 	 textField.setColumns(10);
 	 
 	 textField_1 = new JTextField();
-	 textField_1.setBounds(402, 420, 537, 295);
+	 textField_1.setBounds(392, 421, 537, 281);
 	 appWindow.getContentPane().add(textField_1);
 	 textField_1.setColumns(10);
 	 appWindow.setVisible(true);
