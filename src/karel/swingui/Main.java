@@ -26,19 +26,32 @@ import java.io.File;
 import javax.swing.*;
 
 import karel.AppWindow;
+import karel.Robot;
+
 import java.awt.TextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.BorderLayout;
+import java.awt.DisplayMode;
 import java.awt.Font;
 
 public class Main {
   private static JTextField textField;
   private static JTextField textField_1;
 
-    public static void main(String args[]) throws Exception {
+  boolean RechtsDrehen;
+  
+  
+  
+  public static void turnleft() {
+	  Robot R1 = new Robot();
+	  R1.turnleft();
+  }
+  
+  
+  public static void main(String args[]) throws Exception {
 	File worldFile = null;
 	File progFile = null;
 
@@ -118,5 +131,17 @@ public class Main {
 	 textField_1.setColumns(10);
 	 appWindow.setVisible(true);
 	
+	 class ButtonLauscher4 implements ActionListener { 
+		    JButton btnLinksdrehen; 
+		    public ButtonLauscher4(JButton buttonRD){ 
+		        this.btnLinksdrehen = buttonRD; 
+		    } 
+		    public void actionPerformed(ActionEvent e) { 
+		        if(e.getSource() == btnLinksdrehen) 
+		            turnleft(); 
+		    } 
+		}
     }
+  
+  
 }
