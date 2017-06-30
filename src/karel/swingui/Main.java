@@ -69,10 +69,6 @@ public class Main {
 	    }
 	}
 	
-	JLabel lblHierBefehleSchreiben = new JLabel("Hier Befehle Schreiben:");
-	lblHierBefehleSchreiben.setBounds(99, 92, 191, 15);
-	appWindow.getContentPane().add(lblHierBefehleSchreiben);
-	
 	KarelFrame appWindow = new KarelFrame("Karel");
 	appWindow.fWorldPanel.setBounds(392, 12, 535, 396);
 		
@@ -88,23 +84,15 @@ public class Main {
 				);
 
 	 appWindow.setSize(953, 773);
-	 
-	 JButton btnTest = new JButton("test");
-	 btnTest.setBounds(67, 190, 63, 25);
-	 btnTest.addActionListener(new ActionListener() {
-	   public void actionPerformed(ActionEvent arg0) {
-	   }
-	 });
 	 appWindow.fWorldPanel.setLayout(null);
-	 appWindow.fWorldPanel.add(btnTest);
 	 appWindow.getContentPane().setLayout(null);
 	 
 	 JButton btnRechtdrehen = new JButton("RechtDrehen");
-	 btnRechtdrehen.setBounds(12, 12, 136, 25);
+	 btnRechtdrehen.setBounds(12, 12, 123, 25);
 	 appWindow.getContentPane().add(btnRechtdrehen);
 	 
 	 JButton btnLinksdrehen = new JButton("LinksDrehen");
-	 btnLinksdrehen.setBounds(160, 12, 123, 25);
+	 btnLinksdrehen.setBounds(145, 12, 123, 25);
 	 appWindow.getContentPane().add(btnLinksdrehen);
 	 
 	 JButton btnRun = new JButton("Vorwärts");
@@ -112,23 +100,28 @@ public class Main {
 	   public void actionPerformed(ActionEvent arg0) {
 	   }
 	 });
-	 btnRun.setBounds(12, 55, 123, 25);
+	 btnRun.setBounds(12, 48, 123, 25);
 	 appWindow.getContentPane().add(btnRun);
 	 
 	 JButton btnBlocksetzen = new JButton("BlockSetzen");
-	 btnBlocksetzen.setBounds(147, 55, 136, 25);
+	 btnBlocksetzen.setBounds(147, 48, 123, 25);
 	 appWindow.getContentPane().add(btnBlocksetzen);
 	 
 	 textField = new JTextField();
-	 textField.setDropMode(DropMode.ON);
+	 textField.setDropMode(DropMode.INSERT);
 	 textField.setBounds(12, 95, 368, 607);
 	 appWindow.getContentPane().add(textField);
 	 textField.setColumns(10);
 	 
 	 textField_1 = new JTextField();
+	 textField_1.setEnabled(false);
 	 textField_1.setBounds(392, 421, 537, 281);
 	 appWindow.getContentPane().add(textField_1);
 	 textField_1.setColumns(10);
+	 
+	 JLabel lblHierBefehleSchreiben = new JLabel("Hier Befehle schreiben:");
+	 lblHierBefehleSchreiben.setBounds(102, 80, 166, 14);
+	 appWindow.getContentPane().add(lblHierBefehleSchreiben);
 	 appWindow.setVisible(true);
 	
 	 class ButtonLauscher4 implements ActionListener { 
@@ -142,6 +135,4 @@ public class Main {
 		    } 
 		}
     }
-  
-  
 }
